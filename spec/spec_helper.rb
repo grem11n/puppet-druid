@@ -10,8 +10,7 @@ SimpleCov.start do
   add_filter '/vendor'
   formatter SimpleCov::Formatter::MultiFormatter.new(
     [
-      SimpleCov::Formatter::HTMLFormatter,
-      SimpleCov::Formatter::Console
+      SimpleCov::Formatter::HTMLFormatter
     ]
   )
 end
