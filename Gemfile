@@ -3,7 +3,7 @@ source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 group :test do
   gem 'json_pure', '<= 2.0.1' if RUBY_VERSION < '2.0.0'
   gem 'metadata-json-lint'
-  gem 'puppet', ENV['PUPPET_VERSION'] || '~> 4.0'
+  gem 'puppet', ENV['PUPPET_VERSION'] || '~> 3.8'
   gem 'puppet-lint-absolute_classname-check'
   gem 'puppet-lint-classes_and_types_beginning_with_digits-check'
   gem 'puppet-lint-leading_zero-check'
