@@ -18,7 +18,8 @@ end
 begin
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new
-rescue LoadError
+rescue LoadError => e
+  puts "INFO: ignoring rubocop tasks as not installed #{e.message}"
 end
 
 exclude_paths = [
@@ -53,7 +54,7 @@ end
 
 desc 'Populate CONTRIBUTORS file'
 task :contributors do
-  system("git log --format='%aN' | sort -u > CONTRIBUTORS")
+  system('git log --format=\'%aN\' | sort -u > CONTRIBUTORS')
 end
 
 desc 'Run syntax, lint, and spec tests.'
@@ -63,3 +64,4 @@ task test: %i[
   lint
   spec
 ]
+task test: %w[metadata_lint syntax lint spec]
