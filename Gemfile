@@ -18,7 +18,6 @@ group :test do
   gem 'rspec-puppet-facts'
   gem 'rubocop-rspec', require: false if RUBY_VERSION >= '2.3.0'
   gem 'simplecov', '>= 0.11.0'
-  gem 'simplecov-console', '< 0.4.0' if RUBY_VERSION < '2.0.0'
 end
 
 group :development do

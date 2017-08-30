@@ -4,7 +4,6 @@ require 'rspec-puppet-facts'
 include RspecPuppetFacts
 
 require 'simplecov'
-require 'simplecov-console'
 
 SimpleCov.start do
   add_filter '/spec'
