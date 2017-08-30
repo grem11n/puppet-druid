@@ -1,17 +1,9 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 group :test do
+  gem 'json_pure', '<= 2.0.1' if RUBY_VERSION < '2.0.0'
   gem 'metadata-json-lint'
   gem 'puppet', ENV['PUPPET_VERSION'] || '~> 4.0'
-  gem 'puppetlabs_spec_helper'
-  gem 'rake'
-  gem 'rspec-core', '< 3.2.0' if RUBY_VERSION < '1.9'
-  gem 'rspec-puppet'
-  gem 'rspec-puppet-facts'
-  gem 'rubocop-rspec', :require => false if RUBY_VERSION >= '2.3.0'
-  gem 'simplecov', '>= 0.11.0'
-  gem 'simplecov-console', if RUBY_VERSION < '2.0.0' then '< 0.4.0' end
-
   gem 'puppet-lint-absolute_classname-check'
   gem 'puppet-lint-classes_and_types_beginning_with_digits-check'
   gem 'puppet-lint-leading_zero-check'
@@ -19,8 +11,14 @@ group :test do
   gem 'puppet-lint-trailing_comma-check'
   gem 'puppet-lint-unquoted_string-check'
   gem 'puppet-lint-version_comparison-check'
-
-  gem 'json_pure', '<= 2.0.1' if RUBY_VERSION < '2.0.0'
+  gem 'puppetlabs_spec_helper'
+  gem 'rake'
+  gem 'rspec-core', '< 3.2.0' if RUBY_VERSION < '1.9'
+  gem 'rspec-puppet'
+  gem 'rspec-puppet-facts'
+  gem 'rubocop-rspec', require: false if RUBY_VERSION >= '2.3.0'
+  gem 'simplecov', '>= 0.11.0'
+  gem 'simplecov-console', '< 0.4.0' if RUBY_VERSION < '2.0.0'
 end
 
 group :development do
